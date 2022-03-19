@@ -1,14 +1,24 @@
-let asin = "B08HR6ZBYJ";
-fetch(`https://amazon-price1.p.rapidapi.com/search?keywords=%3C${asin}%3E&marketplace=ES`, {
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "amazon-price1.p.rapidapi.com",
-		"x-rapidapi-key": "326aae80d5mshdcf3a05ea4d5587p194d97jsn32a7a6d215ee"
-	}
-})
-.then(response => {
-	console.log(response);
-})
-.catch(err => {
-	console.error(err);
+const request= require("request-promise");
+const cheerio= require("cheerio");
+
+let asin = "B096L83WV8";
+
+request(`https://www.amazon.de/NVIDIA-GeForce-3080ti-Founders-Grafikkarte/dp/${asin}/`, (error, response, html) => {
+    if(!error && response.statusCode==200) {
+        const $= cheerio.load(html);
+		let price;
+		try {
+			console.log("Debug try");
+			price = parseInt($("a-offscreen").text().trim());
+			console.log($("a-offscreen").text().trim());
+
+		} catch(error) {
+			console.log("Debug catch");
+			price = parseInt($(".a-price-whole").text().trim());
+			price += parseInt($(".a-price-fraction").text().trim());
+		}
+        
+        console.log(price);
+    }
+
 });

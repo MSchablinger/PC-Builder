@@ -1,0 +1,28 @@
+{
+  "name": "mschablinger.github.io",
+  "version": "1.0.0",
+  "description": "Summerproject in subject MEDT",
+  "main": "index.html",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MSchablinger/MSchablinger.github.io.git"
+  },
+  "keywords": [
+    "Summerproject",
+    "project",
+    "MEDT"
+  ],
+  "author": "Mathias Schablinger",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MSchablinger/MSchablinger.github.io/issues"
+  },
+  "homepage": "https://github.com/MSchablinger/MSchablinger.github.io#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.10",
+    "request-promise": "^4.2.6"
+  }
+}
