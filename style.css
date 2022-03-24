@@ -2,6 +2,7 @@
     font-family: Montserrat;
     src: url(Montserrat-Regular.ttf);
 }
+
 html {
     overflow: hidden;
     height: 100%;
@@ -9,22 +10,27 @@ html {
     background-color: #1f0827;
     color: #fff;
 }
+
 body {
     height: 100%;
     margin: 0;
 }
+
 a {
     color: #fff;
     text-decoration: none;
 }
+
 footer {
     display: flex;
     justify-content: space-around;
 }
+
 #choose {
     display: flex;
     height: 90%;
 }
+
 .startbox {
     font-size: 2em;
     width: 30%;
@@ -37,23 +43,27 @@ footer {
     padding-left: 5%;
     border-radius: 0px;
     background: #2d0f3c;
-    box-shadow:  5px 5px 11px #828282, -5px -5px 11px #ffffff;         
+    box-shadow: 5px 5px 11px #828282, -5px -5px 11px #ffffff;
 }
+
 .startbox:hover {
     width: 32%;
     height: 77%;
     font-size: 2.2em;
 }
-.startbox:hover ~ html {
+
+.startbox:hover~html {
     background-color: rgba(45, 15, 60, 0.4);
     filter: blur(8px);
-    -webkit-filter: blur(8px);  
+    -webkit-filter: blur(8px);
 }
+
 .tooltip {
     position: relative;
     display: inline-block;
     font-size: 14.5px;
 }
+
 .tooltip .tooltiptext {
     visibility: hidden;
     width: 140px;
@@ -70,23 +80,27 @@ footer {
     opacity: 0;
     transition: opacity 0.3s;
 }
+
 .tooltip .tooltiptext::after {
     content: "";
     position: absolute;
-    top: 100%; 
+    top: 100%;
     left: 50%;
     margin-left: -5px;
     border-width: 5px;
     border-style: solid;
     border-color: #555 transparent transparent transparent;
 }
+
 .tooltip:hover .tooltiptext {
     visibility: visible;
     opacity: 1;
 }
-#discord, #github, #mail{
-    fill: white; 
+
+#discord, #github, #mail {
+    fill: white;
 }
-.tooltip:hover #discord, #frame:hover #github, .tooltip:hover #mail{
+
+.tooltip:hover #discord, #frame:hover #github, .tooltip:hover #mail {
     fill: #555;
 }

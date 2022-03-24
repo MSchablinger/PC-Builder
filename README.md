@@ -3,4 +3,6 @@
 - [x] Pull prices from amazon
 - [x] Implementation of startpage design
 - [ ] Create and program components
-- [ ] Native Design
+- [ ] Responsive design
+- [ ] Implementation of configurations list design
+- [ ] Implementation of builder design
