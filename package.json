@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/MSchablinger/MSchablinger.github.io#readme",
   "dependencies": {
+    "browserify": "^17.0.0",
     "cheerio": "^1.0.0-rc.10",
     "request-promise": "^4.2.6"
   }

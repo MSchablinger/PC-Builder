@@ -1,3 +1,7 @@
+import {getPrice} from browser_amazonscraper.js
+
+console.log(getPrice("B076HTJRMZ"));
+
 function copy(id) {
     let tooltip;
     if (id == "discord") {
