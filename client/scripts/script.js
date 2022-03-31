@@ -1,4 +1,4 @@
-import {getPrice} from browser_amazonscraper.js
+import {default as getPrice} from browser_amazonscraper.js
 
 console.log(getPrice("B076HTJRMZ"));
 

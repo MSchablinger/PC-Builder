@@ -25,5 +25,9 @@
     "browserify": "^17.0.0",
     "cheerio": "^1.0.0-rc.10",
     "request-promise": "^4.2.6"
+  },
+  "devDependencies": {
+    "minify": "^8.0.4",
+    "tinyify": "^3.0.0"
   }
 }
