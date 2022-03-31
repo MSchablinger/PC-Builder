@@ -1,6 +1,4 @@
-import {default as getPrice} from browser_amazonscraper.js
-
-console.log(getPrice("B076HTJRMZ"));
+//console.log(getPrice("B076HTJRMZ"));
 
 function copy(id) {
     let tooltip;
