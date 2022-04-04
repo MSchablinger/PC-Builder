@@ -1,7 +1,7 @@
 # MEDT Summerproject - PC Builder
 ## TODO
 - [x] Pull prices from amazon
-- [ ] Make amazon scraper functionable for browser
+- [ ] Make communciation between front- and backend functionable
 - [x] Implementation of startpage design
 - [ ] Create and program components
 - [ ] Responsive design
