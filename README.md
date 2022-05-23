@@ -1,6 +1,6 @@
 # MEDT Summerproject - PC Builder
 ## Instructions
-1. Clone the Repository `git clone https://github.com/MSchablinger/PC-Builder/` and change the working directory du `PC-Builder`
+1. Clone the Repository `git clone https://github.com/MSchablinger/PC-Builder/` and change the working directory to `PC-Builder`
 2. Run `npm install`
 3. Run `npm run startup`
 4. Visit http://localhost to view the website
