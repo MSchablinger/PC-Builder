@@ -6,7 +6,7 @@
 4. Visit http://localhost to view the website
 ## TODO
 - [x] Pull prices from amazon
-- [ ] Make communciation between front- and backend functionable
+- [x] Make communciation between front- and backend functionable
 - [x] Implementation of startpage design
 - [ ] Create and program components
 - [ ] Responsive design

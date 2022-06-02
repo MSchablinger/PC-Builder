@@ -4,11 +4,12 @@
   "description": "Summerproject in subject MEDT",
   "main": "index.html",
   "scripts": {
-    "test": "test"
+    "devmode": "nodemon ./server/server.ts",
+    "startup": "npm install && node ./server/server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MSchablinger/MSchablinger.github.io.git"
+    "url": "git+https://github.com/MSchablinger/PC-Builder.git"
   },
   "keywords": [
     "Summerproject",
@@ -18,18 +19,20 @@
   "author": "Mathias Schablinger",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/MSchablinger/MSchablinger.github.io/issues"
+    "url": "https://github.com/MSchablinger/PC-Builder/issues"
   },
-  "homepage": "https://github.com/MSchablinger/MSchablinger.github.io#readme",
+  "homepage": "https://github.com/MSchablinger/PC-Builder#readme",
   "dependencies": {
-    "browserify": "^17.0.0",
     "cheerio": "^1.0.0-rc.10",
     "express": "^4.17.3",
     "http": "^0.0.1-security",
-    "request-promise": "^4.2.6"
+    "nodemon": "^2.0.16",
+    "path": "^0.12.7",
+    "request-promise": "^4.2.6",
+    "ts-node": "^10.8.0"
   },
   "devDependencies": {
-    "minify": "^8.0.4",
-    "tinyify": "^3.0.0"
+    "@types/express": "^4.17.13",
+    "@types/request-promise": "^4.1.48"
   }
 }
