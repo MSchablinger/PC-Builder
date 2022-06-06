@@ -1,6 +1,4 @@
-//console.log(getPrice("B076HTJRMZ"));
-
-function copy(id) {
+function copy(id: string) {
     let tooltip;
     if (id == "discord") {
         navigator.clipboard.writeText("MatseCrafter_304#0034");
@@ -14,7 +12,7 @@ function copy(id) {
     tooltip.innerHTML = "Copied!";
 }
 
-function outFunc(id) {
+function outFunc(id: string) {
     if (id == "discord") {
         let tooltip = document.getElementById("tooltipd");
         tooltip.style.backgroundColor = "#555"
@@ -26,8 +24,8 @@ function outFunc(id) {
     }
 }
 
-async function getPrice(asin) {
-    await fetchRestEndpoint(`http://localhost/price/${asin}`, "GET");
+export async function getPrice(asin: string) {
+    return Number(await fetchRestEndpoint(`http://localhost/price/${asin}`, "GET"));
 }
 async function fetchRestEndpoint(route: string, method: "GET" |"POST" |"PUT" |"DELETE", data?: object): Promise<any> {
     let options: any = { method };

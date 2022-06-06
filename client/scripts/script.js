@@ -1,5 +1,3 @@
-"use strict";
-//console.log(getPrice("B076HTJRMZ"));
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -34,9 +32,9 @@ function outFunc(id) {
         tooltip.innerHTML = "Copy Email";
     }
 }
-function getPrice(asin) {
+export function getPrice(asin) {
     return __awaiter(this, void 0, void 0, function* () {
-        yield fetchRestEndpoint(`http://localhost/price/${asin}`, "GET");
+        return Number(yield fetchRestEndpoint(`http://localhost/price/${asin}`, "GET"));
     });
 }
 function fetchRestEndpoint(route, method, data) {
