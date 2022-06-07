@@ -1,3 +1,4 @@
+"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -7,6 +8,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+dynamicContent();
 function copy(id) {
     let tooltip;
     if (id == "discord") {
@@ -32,9 +34,17 @@ function outFunc(id) {
         tooltip.innerHTML = "Copy Email";
     }
 }
-export function getPrice(asin) {
+function dynamicContent() {
     return __awaiter(this, void 0, void 0, function* () {
-        return Number(yield fetchRestEndpoint(`http://localhost/price/${asin}`, "GET"));
+        let cpus = yield getComponent("CPU");
+        for (const cpu of cpus) {
+            document.getElementsByTagName("ul")[0].innerHTML += `<li>${cpu.name}</li>`;
+        }
+    });
+}
+function getComponent(componentType) {
+    return __awaiter(this, void 0, void 0, function* () {
+        return yield fetchRestEndpoint(`http://localhost:8080/api/${componentType}`, "GET");
     });
 }
 function fetchRestEndpoint(route, method, data) {

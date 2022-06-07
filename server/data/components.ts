@@ -61,7 +61,7 @@ interface Config {
     case?: Case,
     price: number
 }
-let availableCpus: CPU[] = [
+export let availableCpus: CPU[] = [
     {name: "Ryzen 3 4100", cores: 4, threads: 8, minClock: 3.8, maxClock: 4, socket: "AM4", process: 7, tdp: 65, price: getPrice("")},
     {name: "Ryzen 5 5600X", cores: 6, threads: 12, minClock: 3.7, maxClock: 4.6, socket: "AM4", process: 7, tdp: 65, price: getPrice("")},
     {name: "Ryzen 5 3600", cores:6, threads: 12, minClock: 3.6, maxClock: 4.2, socket: "AM4", process: 7, tdp: 65, price: getPrice("")},

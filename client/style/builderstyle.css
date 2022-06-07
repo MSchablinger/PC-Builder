@@ -1,11 +1,11 @@
 @font-face {
     font-family: Montserrat;
-    src: url(Montserrat-Regular.ttf);
+    src: url(/font);
 }
 html {
     height: 100%;
     font-family: Montserrat;
-    color: #fff;
+    color: #000;
     overflow: hidden;
     background-color: #1f0827;
 }

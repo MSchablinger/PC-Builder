@@ -1,3 +1,4 @@
+dynamicContent()
 function copy(id: string) {
     let tooltip;
     if (id == "discord") {
@@ -23,11 +24,16 @@ function outFunc(id: string) {
         tooltip.innerHTML = "Copy Email";
     }
 }
-
-export async function getPrice(asin: string) {
-    return Number(await fetchRestEndpoint(`http://localhost/price/${asin}`, "GET"));
+async function dynamicContent() {
+    let cpus = await getComponent("CPU");
+    for(const cpu of cpus) {
+        document.getElementsByTagName("ul")[0].innerHTML += `<li>${cpu.name}</li>`   
+    }
 }
-async function fetchRestEndpoint(route: string, method: "GET" |"POST" |"PUT" |"DELETE", data?: object): Promise<any> {
+async function getComponent(componentType: string) {
+    return await fetchRestEndpoint(`http://localhost:8080/api/${componentType}`, "GET");
+}
+async function fetchRestEndpoint(route: string, method: "GET" |"POST" |"PUT" |"DELETE", data?: object): Promise<Object[]> {
     let options: any = { method };
     if (data) {
         options.headers = { "Content-Type": "application/json" };
