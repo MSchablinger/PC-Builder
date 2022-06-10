@@ -1,4 +1,3 @@
-dynamicContent()
 function copy(id: string) {
     let tooltip;
     if (id == "discord") {
@@ -24,11 +23,40 @@ function outFunc(id: string) {
         tooltip.innerHTML = "Copy Email";
     }
 }
-async function dynamicContent() {
+async function show(type: string) {
     let cpus = await getComponent("CPU");
-    for(const cpu of cpus) {
-        document.getElementsByTagName("ul")[0].innerHTML += `<li>${cpu.name}</li>`   
+    let gpus = await getComponent("GPU");
+    switch(type) {
+        case "CPU":
+            for(const cpu of cpus) {
+                document.getElementsByTagName("ul")[0].innerHTML += `<li onclick="detail("${cpu.name}")">${cpu.name}</li>`   
+            }
+            break;
+        case "GPU":
+            for(const gpu of gpus) {
+                document.getElementsByTagName("ul")[1].innerHTML += `<li onclick="detail("${gpu.name}")">${gpu.name}</li>`
+            }
     }
+}
+async function detail(name: string) {
+    let component = getComponentByName(name);
+    
+    document.getElementById("component-detail").innerHTML = "";
+}
+async function getComponentByName(componentName: string): Promise<any> {
+    let cpus = await getComponent("CPU");
+    let gpus = await getComponent("GPU"); 
+    for(const cpu of cpus) {
+        if(componentName == cpu.name) {
+            return cpu;
+        }
+    }
+	for(const gpu of gpus) {
+		if(componentName == gpu.name) {
+			return gpu;
+		}
+	}
+    return undefined;
 }
 async function getComponent(componentType: string) {
     return await fetchRestEndpoint(`http://localhost:8080/api/${componentType}`, "GET");

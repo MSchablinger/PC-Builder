@@ -8,7 +8,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-dynamicContent();
 function copy(id) {
     let tooltip;
     if (id == "discord") {
@@ -34,12 +33,44 @@ function outFunc(id) {
         tooltip.innerHTML = "Copy Email";
     }
 }
-function dynamicContent() {
+function show(type) {
     return __awaiter(this, void 0, void 0, function* () {
         let cpus = yield getComponent("CPU");
-        for (const cpu of cpus) {
-            document.getElementsByTagName("ul")[0].innerHTML += `<li>${cpu.name}</li>`;
+        let gpus = yield getComponent("GPU");
+        switch (type) {
+            case "CPU":
+                for (const cpu of cpus) {
+                    document.getElementsByTagName("ul")[0].innerHTML += `<li onclick="detail("${cpu.name}")">${cpu.name}</li>`;
+                }
+                break;
+            case "GPU":
+                for (const gpu of gpus) {
+                    document.getElementsByTagName("ul")[1].innerHTML += `<li onclick="detail("${gpu.name}")">${gpu.name}</li>`;
+                }
         }
+    });
+}
+function detail(name) {
+    return __awaiter(this, void 0, void 0, function* () {
+        let component = getComponentByName(name);
+        document.getElementById("component-detail").innerHTML = "";
+    });
+}
+function getComponentByName(componentName) {
+    return __awaiter(this, void 0, void 0, function* () {
+        let cpus = yield getComponent("CPU");
+        let gpus = yield getComponent("GPU");
+        for (const cpu of cpus) {
+            if (componentName == cpu.name) {
+                return cpu;
+            }
+        }
+        for (const gpu of gpus) {
+            if (componentName == gpu.name) {
+                return gpu;
+            }
+        }
+        return undefined;
     });
 }
 function getComponent(componentType) {

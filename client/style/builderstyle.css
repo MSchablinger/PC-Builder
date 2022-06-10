@@ -28,8 +28,16 @@ body div div:nth-child(1){
     width: 70%;
 }
 #component-preview {
-    margin: 2%;
+    margin: 1%;
+    margin-bottom: 1%;
 }
 #component-detail {
     margin: 2%;
+}
+#component-list {
+    cursor: pointer;
+}
+ul {
+    list-style-type: none;
+    overflow: scroll;
 }

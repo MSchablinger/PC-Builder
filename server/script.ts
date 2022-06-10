@@ -1,5 +1,6 @@
 import cheerio from "cheerio"
 import request from "request-promise";
+import { availableCpus, availableGpus, CPU } from "./data/components";
 
 export function getPrice(asin: string) {
     let price = 0;

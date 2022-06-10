@@ -1,7 +1,6 @@
 import express from "express";
 import { join, resolve } from "path";
-import { availableCpus } from "./data/components";
-
+import { availableCpus, availableGpus } from "./data/components";
 let app = express();
 
 let clientPath = join(resolve(), './client');
@@ -12,10 +11,17 @@ app.get("/", function (request, response) {
 app.get("/img/:img", function (request, response) {
     response.sendFile(join(clientPath, 'img', `${request.params.img}.svg`));
 });
+app.get("/baustelle", function (request, response) {
+    response.sendFile(join(clientPath, 'img', `baustelle.png`));
+});
 app.get("/api/:componentType", function(request, response) {
 	switch(request.params.componentType) {
 		case "CPU":
 			response.send(availableCpus) 
+            break;
+        case "GPU":
+            response.send(availableGpus)
+            break;    
 	}
 });
 app.get("/font", function (request, response) {
